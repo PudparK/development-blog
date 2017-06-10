@@ -22,6 +22,12 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    stats: "errors-only",
+    open: true
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Noob Combo',

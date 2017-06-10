@@ -4,7 +4,7 @@
   "description": "Webpack starter project to understand how it works.",
   "main": "app.js",
   "scripts": {
-    "dev": "webpack -d --watch",
+    "dev": "webpack-dev-server",
     "prod": "webpack -p"
   },
   "author": "Paul Barron",
