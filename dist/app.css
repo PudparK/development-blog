@@ -1,0 +1,5 @@
+body {
+  background-color: pink; }
+  body p {
+    color: red;
+    background-color: green; }
