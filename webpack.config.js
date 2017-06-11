@@ -19,6 +19,11 @@ module.exports = {
           use: ['css-loader', 'sass-loader'],
           filename: path.resolve(__dirname, "dist")
         })
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
       }
     ]
   },
