@@ -6,10 +6,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: './src/app.js',
+    contact: './src/contact.js'
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: 'app.bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -38,10 +41,18 @@ module.exports = {
       title: 'Noob Combo',
       template: './src/index.ejs',
       hash:true,
+      excludeChunks: ['contact']
 /*      minify: {
         collapseWhitespace: false
       }
 */    }),
+    new HtmlWebpackPlugin({
+      title: 'Contact Page',
+      hash:true,
+      filename: 'contact.html',
+      template: './src/contact.ejs',
+      chunks: ['contact']
+}),
     new ExtractTextPlugin({
       filename: 'app.css',
       disable: false,

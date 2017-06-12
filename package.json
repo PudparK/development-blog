@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "npm run clean && webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "author": "Paul Barron",
   "license": "ISC",
