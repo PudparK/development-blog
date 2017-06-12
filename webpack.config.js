@@ -27,6 +27,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.pug$/,
+        use: ['html-loader', 'pug-html-loader']
       }
     ]
   },
@@ -39,7 +43,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Noob Combo',
-      template: './src/index.ejs',
+      template: './src/index.pug',
       hash:true,
       excludeChunks: ['contact']
 /*      minify: {
