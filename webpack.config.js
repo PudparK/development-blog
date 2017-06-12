@@ -1,6 +1,9 @@
 // Node Modules
 const path = require('path');
 
+// Webpack
+var webpack = require('webpack');
+
 // Plugins
 var HtmlWebpackPlugin = require('html-webpack-plugin'); 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -17,11 +20,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.sass$/, use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-          filename: path.resolve(__dirname, "dist")
-        })
+        test: /\.sass$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.js$/,
@@ -38,6 +38,7 @@ module.exports = {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     stats: "errors-only",
+    hot: true,
     open: true
   },
   plugins: [
@@ -48,19 +49,21 @@ module.exports = {
       excludeChunks: ['contact']
 /*      minify: {
         collapseWhitespace: false
-      }
-*/    }),
+      }*/
+    }),
     new HtmlWebpackPlugin({
       title: 'Contact Page',
       hash:true,
       filename: 'contact.html',
       template: './src/contact.ejs',
       chunks: ['contact']
-}),
+    }),
     new ExtractTextPlugin({
       filename: 'app.css',
-      disable: false,
+      disable: true,
       allChunks: true
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ]
 }

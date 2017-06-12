@@ -1,4 +1,7 @@
-console.log("Hello from app.js");
+import css from './app.sass';
+console.log('testing hot module replacement.');
+
+/*console.log("Hello from app.js");
 
 const css = require('./app.sass');
 
@@ -10,4 +13,4 @@ var hello = <h1>Hello, world poop!</h1>;
 ReactDOM.render(
   hello,
   document.getElementById('root')
-);
+);*/
