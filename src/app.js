@@ -14,3 +14,9 @@ ReactDOM.render(
   hello,
   document.getElementById('root')
 );*/
+
+$(document).ready(function(){
+    $(".container").click(function(){
+      console.log("I'm working");
+    });
+});

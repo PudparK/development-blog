@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 
-<link href="/css/bootstrap.css?cda6760cd1049b77e5f9" rel="stylesheet"><link href="/css/app.css?cda6760cd1049b77e5f9" rel="stylesheet"></head>
+</head>
 <body>
   <div class="container">
     <h1>Webpack 2 images</h1>
     <h2>How to configure Webpack 2 to use images from our template or css?</h2>
-    <img src=./img/dummy-image.png alt="">
+    <img src=<%= require("./img/dummy-image.png") %> alt="">
 
 
 
@@ -42,5 +42,5 @@
   </div>
 
   </div>
-<script type="text/javascript" src="bootstrap.bundle.js?cda6760cd1049b77e5f9"></script><script type="text/javascript" src="app.bundle.js?cda6760cd1049b77e5f9"></script></body>
+</body>
 </html>
